@@ -1,0 +1,10 @@
+pvporcupine==3.0.1
+pyaudio
+openai>=1.0.0
+requests
+sounddevice
+numpy
+soundfile
+whisper
+tqdm
+ffmpeg-python
