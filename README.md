@@ -1,2 +1,117 @@
-# jasper
-Voice Assistant project
+Got it! Here’s a single, fully consolidated README markdown you can copy-paste as one file — with all setup, environment, dependencies, usage, and explanation in one place:
+
+# Jarvis Voice Assistant
+
+A simple voice assistant that listens for the wake word **"Jarvis"**, records your speech, transcribes it with Whisper, responds with OpenAI’s GPT-3.5-turbo, and speaks the response using ElevenLabs Text-to-Speech API.
+
+---
+
+## Features
+
+- Wake word detection using Picovoice Porcupine
+- Audio recording and transcription with Whisper
+- Built-in responses for "What time is it?" and "What day is it?"
+- OpenAI GPT-3.5-turbo for chat completions
+- Speech synthesis via ElevenLabs Text-to-Speech
+- Easy setup and run on your local machine
+
+---
+
+## Setup Instructions
+
+### 1. Clone or download this repository
+
+```bash
+git clone <your-repo-url>
+cd jarvis-assistant
+
+2. Create and activate a Python virtual environment
+
+On macOS/Linux:
+
+python3 -m venv venv
+source venv/bin/activate
+
+On Windows:
+
+python -m venv venv
+.\venv\Scripts\activate
+
+3. Install dependencies
+
+pip install -r requirements.txt
+
+4. Set up environment variables
+
+Create a .env file in the project root or set environment variables in your shell:
+
+export OPENAI_API_KEY="your_openai_api_key"
+export ELEVENLABS_API_KEY="your_elevenlabs_api_key"
+export PICOVOICE_API_KEY="your_picovoice_access_key"
+
+Replace the values with your actual API keys:
+	•	OPENAI_API_KEY: Your OpenAI API key (https://platform.openai.com/account/api-keys)
+	•	ELEVENLABS_API_KEY: Your ElevenLabs API key (https://beta.elevenlabs.io/)
+	•	PICOVOICE_API_KEY: Your Picovoice Porcupine access key (https://picovoice.ai/)
+
+5. Run the Jarvis assistant
+
+python jarvis.py
+
+Say the wake word “Jarvis” clearly when prompted. Then speak your query or command.
+
+⸻
+
+How It Works (Code Explanation)
+	1.	Wake Word Detection
+Uses the Picovoice Porcupine engine to listen continuously for the wake word "jarvis". When detected, it activates the assistant.
+	2.	Audio Recording
+Records ~3 seconds of audio after the wake word using the sounddevice library at 16 kHz sample rate.
+	3.	Transcription
+Uses OpenAI’s Whisper model (loaded locally with the whisper package) to transcribe the recorded speech into text.
+	4.	Built-in Queries
+Checks if the query is asking for the current time or date and returns the appropriate response without calling OpenAI.
+	5.	OpenAI Chat Completion
+If the query is not a built-in one, sends the text prompt to OpenAI’s GPT-3.5-turbo API for a chat completion reply.
+	6.	Text-to-Speech
+Sends the response text to ElevenLabs Text-to-Speech API, downloads the audio stream, and plays it back via sounddevice.
+
+⸻
+
+Requirements (requirements.txt)
+
+openai
+sounddevice
+numpy
+pyaudio
+pvporcupine
+requests
+whisper
+soundfile
+python-dotenv
+
+
+⸻
+
+Notes
+	•	Make sure your microphone is set up and working correctly.
+	•	The program listens for the wake word once per run; restart to listen again.
+	•	ElevenLabs voice ID is set to a default (EXAVITQu4vr4xnSDxMaL), you can replace it in the code with a voice ID of your choice.
+	•	Picovoice Porcupine requires a valid access key and internet connection on first use.
+	•	Whisper requires a local model download and will use CPU by default.
+
+⸻
+
+Troubleshooting
+	•	ModuleNotFoundError: Ensure your virtual environment is activated and dependencies installed.
+	•	API errors: Verify your API keys and network connectivity.
+	•	Audio issues: Check microphone permissions and device settings.
+	•	Segmentation faults or crashes: Try reducing recording time or updating audio drivers.
+
+⸻
+
+License
+
+MIT License
+
+⸻
