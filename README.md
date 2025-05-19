@@ -1,5 +1,3 @@
-Got it! Here’s a single, fully consolidated README markdown you can copy-paste as one file — with all setup, environment, dependencies, usage, and explanation in one place:
-
 # Jarvis Voice Assistant
 
 A simple voice assistant that listens for the wake word **"Jarvis"**, records your speech, transcribes it with Whisper, responds with OpenAI’s GPT-3.5-turbo, and speaks the response using ElevenLabs Text-to-Speech API.
