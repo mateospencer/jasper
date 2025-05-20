@@ -4,7 +4,7 @@ A simple voice assistant that listens for the wake word **"Jarvis"**, records yo
 
 ---
 
-## Features
+## Current Features
 
 - Wake word detection using Picovoice Porcupine
 - Audio recording and transcription with Whisper
@@ -14,13 +14,25 @@ A simple voice assistant that listens for the wake word **"Jarvis"**, records yo
 - Easy setup and run on your local machine
 
 ---
+## Requirements
 
-## Setup Instructions
+### 1. APIs
+	- OpenAI: Handles natural language understanding and response generation. Sends spoken query after transcription to OpenAI's GPT-3.5-Turbo. 
+ 	- ElevenLabs: Handles text-to-speech for the assistants response and making it sound human. 
+  	- PicoVoice (Porcupine): Handles wake word detection. 
 
-### 1. Clone or download this repository
+### 2. Costs
+   	- Note on GPT-3.5-Turbo: I used GPT-3.5 Turbo because the input compared to GPT-4 Turbo (o4) mainly due to cost reduction. GPT-4 costs 0.01/ 1K tokens for input and 0.03 / 1k tokens for output. Whereas GPT-3.5 costs 0.001 / 1k tokens for input and output is free. GPT-4 is more advanced and gives more natural replies. Cost estimates for this project were to keep the prototype under $10/month. 
+
+    	- Whisper is used locally for the free voice input. 
+	- PicoVoice has a free-tier
+ 
+## 3. Setup Instructions
+
+### 3A. Clone or download this repository
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/mateospencer/jasper.git
 cd jarvis-assistant
 
 2. Create and activate a Python virtual environment
@@ -92,20 +104,10 @@ python-dotenv
 ⸻
 
 Notes
-	•	Make sure your microphone is set up and working correctly.
-	•	The program listens for the wake word once per run; restart to listen again.
+	•	The program listens for the wake word once per run due to being a proof of concept; restart to listen again. This will change in the next version. 
 	•	ElevenLabs voice ID is set to a default (EXAVITQu4vr4xnSDxMaL), you can replace it in the code with a voice ID of your choice.
 	•	Picovoice Porcupine requires a valid access key and internet connection on first use.
 	•	Whisper requires a local model download and will use CPU by default.
-
-⸻
-
-Troubleshooting
-	•	ModuleNotFoundError: Ensure your virtual environment is activated and dependencies installed.
-	•	API errors: Verify your API keys and network connectivity.
-	•	Audio issues: Check microphone permissions and device settings.
-	•	Segmentation faults or crashes: Try reducing recording time or updating audio drivers.
-
 ⸻
 
 License
@@ -114,8 +116,8 @@ MIT License
 
 ⸻
 
-Enjoy your personal Jarvis assistant!
-
----
-
-If you want, I can also generate the corresponding updated `requirements.txt` and the full `jarvis.py` file again — just say the word!
+## 4. Future Development
+	A. Developing to enable continous listening as well as a sleep command.
+	B. Adding Spotify API integration
+	C. Adding some smart home integration
+	D. Adding some computer controls
