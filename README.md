@@ -17,15 +17,15 @@ A simple voice assistant that listens for the wake word **"Jarvis"**, records yo
 ## Requirements
 
 ### 1. APIs
-	- OpenAI: Handles natural language understanding and response generation. Sends spoken query after transcription to OpenAI's GPT-3.5-Turbo. 
- 	- ElevenLabs: Handles text-to-speech for the assistants response and making it sound human. 
-  	- PicoVoice (Porcupine): Handles wake word detection. 
+- OpenAI: Handles natural language understanding and response generation. Sends spoken query after transcription to OpenAI's GPT-3.5-Turbo. 
+- ElevenLabs: Handles text-to-speech for the assistants response and making it sound human. 
+- PicoVoice (Porcupine): Handles wake word detection. 
 
 ### 2. Costs
-   	- Note on GPT-3.5-Turbo: I used GPT-3.5 Turbo because the input compared to GPT-4 Turbo (o4) mainly due to cost reduction. GPT-4 costs 0.01/ 1K tokens for input and 0.03 / 1k tokens for output. Whereas GPT-3.5 costs 0.001 / 1k tokens for input and output is free. GPT-4 is more advanced and gives more natural replies. Cost estimates for this project were to keep the prototype under $10/month. 
+- Note on GPT-3.5-Turbo: I used GPT-3.5 Turbo because the input compared to GPT-4 Turbo (o4) mainly due to cost reduction. GPT-4 costs 0.01/ 1K tokens for input and 0.03 / 1k tokens for output. Whereas GPT-3.5 costs 0.001 / 1k tokens for input and output is free. GPT-4 is more advanced and gives more natural replies. Cost estimates for this project were to keep the prototype under $10/month. 
 
-    	- Whisper is used locally for the free voice input. 
-	- PicoVoice has a free-tier
+- Whisper is used locally for the free voice input. 
+- PicoVoice has a free-tier
  
 ## 3. Setup Instructions
 
