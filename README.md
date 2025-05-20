@@ -79,18 +79,12 @@ Say the wake word “Jarvis” clearly when prompted. Then speak your query or c
 ⸻
 
 How It Works (Code Explanation)
-	1.	Wake Word Detection
-Uses the Picovoice Porcupine engine to listen continuously for the wake word "jarvis". When detected, it activates the assistant.
-	2.	Audio Recording
-Records ~3 seconds of audio after the wake word using the sounddevice library at 16 kHz sample rate.
-	3.	Transcription
-Uses OpenAI’s Whisper model (loaded locally with the whisper package) to transcribe the recorded speech into text.
-	4.	Built-in Queries
-Checks if the query is asking for the current time or date and returns the appropriate response without calling OpenAI.
-	5.	OpenAI Chat Completion
-If the query is not a built-in one, sends the text prompt to OpenAI’s GPT-3.5-turbo API for a chat completion reply.
-	6.	Text-to-Speech
-Sends the response text to ElevenLabs Text-to-Speech API, downloads the audio stream, and plays it back via sounddevice.
+1. Wake Word Detection: Uses the Picovoice Porcupine engine to listen continuously for the wake word "jarvis". When detected, it activates the assistant.
+2. Audio Recording: Records ~3 seconds of audio after the wake word using the sounddevice library at 16 kHz sample rate.
+3. Transcription: Uses OpenAI’s Whisper model (loaded locally with the whisper package) to transcribe the recorded speech into text.
+4. Built-in Queries: Checks if the query is asking for the current time or date and returns the appropriate response without calling OpenAI.
+5. OpenAI Chat Completion: If the query is not a built-in one, sends the text prompt to OpenAI’s GPT-3.5-turbo API for a chat completion reply.
+6. Text-to-Speech: Sends the response text to ElevenLabs Text-to-Speech API, downloads the audio stream, and plays it back via sounddevice.
 
 ⸻
 
