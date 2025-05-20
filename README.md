@@ -104,10 +104,10 @@ python-dotenv
 ⸻
 
 Notes
-	•	The program listens for the wake word once per run due to being a proof of concept; restart to listen again. This will change in the next version. 
-	•	ElevenLabs voice ID is set to a default (EXAVITQu4vr4xnSDxMaL), you can replace it in the code with a voice ID of your choice.
-	•	Picovoice Porcupine requires a valid access key and internet connection on first use.
-	•	Whisper requires a local model download and will use CPU by default.
+- The program listens for the wake word once per run due to being a proof of concept; restart to listen again. This will change in the next version. 
+- ElevenLabs voice ID is set to a default (EXAVITQu4vr4xnSDxMaL), you can replace it in the code with a voice ID of your choice.
+- Picovoice Porcupine requires a valid access key and internet connection on first use.
+- Whisper requires a local model download and will use CPU by default.
 ⸻
 
 License
