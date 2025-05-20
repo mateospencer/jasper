@@ -29,27 +29,32 @@ A simple voice assistant that listens for the wake word **"Jarvis"**, records yo
  
 ## 3. Setup Instructions
 
-### 3A. Clone or download this repository
-
 ```bash
 git clone https://github.com/mateospencer/jasper.git
 cd jarvis-assistant
+``
 
 2. Create and activate a Python virtual environment
 
 On macOS/Linux:
 
+```bash
 python3 -m venv venv
 source venv/bin/activate
+```
 
 On Windows:
 
+```bash
 python -m venv venv
 .\venv\Scripts\activate
+```
 
 3. Install dependencies
 
+```bash
 pip install -r requirements.txt
+```
 
 4. Set up environment variables
 
@@ -66,8 +71,9 @@ Replace the values with your actual API keys:
 
 5. Run the Jarvis assistant
 
+```bash
 python jarvis.py
-
+```
 Say the wake word “Jarvis” clearly when prompted. Then speak your query or command.
 
 ⸻
@@ -117,7 +123,7 @@ MIT License
 ⸻
 
 ## 4. Future Development
-	A. Developing to enable continous listening as well as a sleep command.
-	B. Adding Spotify API integration
-	C. Adding some smart home integration
-	D. Adding some computer controls
+- Developing to enable continous listening as well as a sleep command.
+- Adding Spotify API integration
+- Adding some smart home integration
+- Adding some computer controls
