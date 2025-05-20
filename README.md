@@ -29,10 +29,10 @@ A simple voice assistant that listens for the wake word **"Jarvis"**, records yo
  
 ## 3. Setup Instructions
 
-```bash
+```
 git clone https://github.com/mateospencer/jasper.git
 cd jarvis-assistant
-``
+```
 
 2. Create and activate a Python virtual environment
 
